@@ -6,7 +6,7 @@ with raw_supplies as (
         perishable,
         sku
     from
-        dt-mirko-sandbox-dev.dbt_essentials.raw_supplies
+        {{ source('jaffle_shop', 'raw_supplies') }}
 )
 
 select * from raw_supplies

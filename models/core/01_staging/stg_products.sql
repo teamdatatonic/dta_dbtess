@@ -6,7 +6,7 @@ with raw_products as (
         price,
         description
     from
-        dt-mirko-sandbox-dev.dbt_essentials.raw_products
+        {{ source('jaffle_shop', 'raw_products') }}
 )
 
 select * from raw_products

@@ -5,7 +5,7 @@ with raw_stores as (
         opened_at,
         tax_rate
     from
-        dt-mirko-sandbox-dev.dbt_essentials.raw_stores
+        {{ source('jaffle_shop', 'raw_stores') }}
 )
 
 select * from raw_stores

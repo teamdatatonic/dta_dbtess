@@ -8,7 +8,7 @@ with raw_orders as (
         tax_paid,
         order_total
     from
-        dt-mirko-sandbox-dev.dbt_essentials.raw_orders
+        {{ source('jaffle_shop', 'raw_orders') }}
 )
 
 select * from raw_orders

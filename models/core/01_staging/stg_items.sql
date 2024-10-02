@@ -4,6 +4,7 @@ with raw_items as (
         order_id,
         sku
     from
+        -- Demo here use the source macro 
         dt-mirko-sandbox-dev.dbt_essentials.raw_items
 )
 
