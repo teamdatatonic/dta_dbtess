@@ -7,7 +7,7 @@ with top10_customers as (
         left join {{ ref('dim_items') }} as i using (order_id)
         left join {{ ref('dim_customers') }} as c using (customer_id)
     group by c.name
-    order by total_purchased
+    order by total_purchased desc
     limit 10
 )
 
