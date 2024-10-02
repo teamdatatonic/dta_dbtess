@@ -40,7 +40,10 @@ models:
     core:
       01_staging:
         +materialized: view
+        +schema: stg
       02_intermediate:
         +materialized: table
+        +schema: int
       03_marts:
         +materialized: table
+        +schema: marts
