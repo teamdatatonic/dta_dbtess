@@ -12,7 +12,7 @@ avg_taxes_per_orders as (
     select
         c.name,
         -- ADD safe_divide macro here
-        round((ot.total_taxes / ot.total_orders) * 100, 2) as avg_taxes,
+        round(({{ dbt_utils.safe_divide('ot.total_taxes', 'ot.total_orders') }}) * 100, 2) as avg_taxes
     from
         orders_taxes as ot 
         left join {{ ref('dim_customers') }} as c using (customer_id)
